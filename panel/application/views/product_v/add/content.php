@@ -65,14 +65,14 @@
                     <!--stock_code(stok durumu)-->
                     <div class="form-group">
                         <label>Stok Durumu</label>
-                        <select name="stock_status" id="stock_code" class="form-control"  >
+                        <select name="stock_status_id" id="stock_code" class="form-control"  >
                             <option value="">Lütfen Bir Stok Durumu Seçiniz</option>
-                            <option value="Var">Var</option>
-                            <option value="Yok">Yok</option>
-                            <option value="Üretim">Üretim Aşamasında</option>
+                            <?php foreach ($stock_status as $status) { ?>
+                                <option value="<?php echo $status->id;?>"><?php echo $status->stok_name;?></option>
+                            <?php } ?>
                         </select>
                         <?php if (isset($form_error)){ ?>
-                            <small style="color:#ff6c00; font-size: 13px;" class="pull-right"><?php echo form_error("stock_code"); ?></small>
+                            <small style="color:#ff6c00; font-size: 13px;" class="pull-right"><?php echo form_error("stock_status_id"); ?></small>
                         <?php } ?>
                         </label>
                     </div>
@@ -88,7 +88,7 @@
                             <?php } ?>
                         </select>
                         <?php if (isset($form_error)){ ?>
-                            <small style="color:#ff6c00; font-size: 13px;" class="pull-right"><?php echo form_error("category"); ?></small>
+                            <small style="color:#ff6c00; font-size: 13px;" class="pull-right"><?php echo form_error("categories_id"); ?></small>
                         <?php } ?>
                         </label>
                     </div>
@@ -102,7 +102,7 @@
                     <!--material(Malzeme)-->
                     <div class="form-group">
                         <label>Malzeme</label>
-                        <select name="material" id="material" class="form-control"  >
+                        <select name="material_id" id="material" class="form-control"  >
                             <option value="">Lütfen Bir Malzeme Seçiniz</option>
                             <option value="Cam">Cam</option>
                             <option value="Ahşap">Ahşap</option>
@@ -118,7 +118,7 @@
                     <!--Bulb(Ampül Sayısı)-->
                     <div class="form-group">
                         <label>Ampül Sayısı</label>
-                        <select name="bulb" id="bulb" class="form-control"  >
+                        <select name="bulb_id" id="bulb" class="form-control"  >
                             <option value="">Lütfen Bir Değer Giriniz</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -142,7 +142,7 @@
                     <!--usage_area(Kullanım Alanı)-->
                     <div class="form-group">
                         <label>Kullanım Alanı</label>
-                        <select name="usage_area" id="usage_area" class="form-control"  >
+                        <select name="usage_area_id" id="usage_area" class="form-control"  >
                             <option value="">Lütfen Bir Kullanım Alanı Seçiniz</option>
                             <option value="Salon">Salon</option>
                             <option value="Oturma Odası">Oturma Odası</option>
@@ -162,7 +162,7 @@
                     <!--color(Renk)-->
                     <div class="form-group">
                         <label>Renkler</label>
-                        <select name="color" id="color" class="form-control"  >
+                        <select name="color_id" id="color" class="form-control"  >
                             <option value="">Lütfen Bir Ürün Rengi Seçiniz</option>
                             <option value="Siyah">Siyah</option>
                             <option value="Beyaz">Beyaz</option>

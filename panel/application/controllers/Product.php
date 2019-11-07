@@ -35,7 +35,8 @@ class Product extends CI_Controller {
 
         $viewData = new stdClass();
 
-        $viewData->categories = $this->db->get("categories")->result();
+        $viewData->categories   = $this->db->get("categories")->result();
+        $viewData->stock_status = $this->db->get("stock")->result();
 
         $viewData->viewFolder = $this->viewFolder;
         $viewData->subViewFolder = "add";
@@ -50,14 +51,14 @@ class Product extends CI_Controller {
 
         $this->form_validation->set_rules("product_name", "Ürün Adı", "required|trim");
         $this->form_validation->set_rules("price", "Fiyat", "required|trim");
-        $this->form_validation->set_rules("bulb", "Ampül Sayısı", "required|trim");
+        $this->form_validation->set_rules("bulb_id", "Ampül Sayısı", "required|trim");
       //  $this->form_validation->set_rules("category", "Kategori", "required|trim");
-        $this->form_validation->set_rules("color", "Renk", "required|trim");
-        $this->form_validation->set_rules("usage_area", "Kullanım Alanı", "required|trim");
-        $this->form_validation->set_rules("material", "Malzeme", "required|trim");
+        $this->form_validation->set_rules("color_id", "Renk", "required|trim");
+        $this->form_validation->set_rules("usage_area_id", "Kullanım Alanı", "required|trim");
+        $this->form_validation->set_rules("material_id", "Malzeme", "required|trim");
         $this->form_validation->set_rules("description", "Açıklama", "required|trim");
         $this->form_validation->set_rules("stock_code", "Stok Kodu", "required|trim");
-        $this->form_validation->set_rules("stock_status", "Stok Durumu", "required|trim");
+        $this->form_validation->set_rules("stock_status_id", "Stok Durumu", "required|trim");
         $this->form_validation->set_rules("depo", "Stok Adeti", "required|trim");
 
         $this->form_validation->set_message(
@@ -78,14 +79,14 @@ class Product extends CI_Controller {
                     "categories_id"         => $this->input->post("categories_id"),
                     "discounted_rate" => $this->input->post("discounted_rate"),
                     "discounted_price"=> $this->input->post("discounted_price"),
-                    "bulb"          => $this->input->post("bulb"),
+                    "bulb_id"          => $this->input->post("bulb_id"),
                    // "category"      => $this->input->post("category"),
-                    "color"         => $this->input->post("color"),
-                    "usage_area"    => $this->input->post("usage_area"),
-                    "material"      => $this->input->post("material"),
+                    "color_id"         => $this->input->post("color_id"),
+                    "usage_area_id"    => $this->input->post("usage_area_id"),
+                    "material_id"      => $this->input->post("material_id"),
                     "description"   => $this->input->post("description"),
                     "stock_code"    => $this->input->post("stock_code"),
-                    "stock_status"  => $this->input->post("stock_status"),
+                    "stock_status_id"  => $this->input->post("stock_status_id"),
                     "depo"          => $this->input->post("depo"),
                     "width"         => $this->input->post("width"),
                     "height"        => $this->input->post("height"),
