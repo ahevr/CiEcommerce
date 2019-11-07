@@ -400,7 +400,7 @@ class Categories extends CI_Controller {
             );
 
         }else{
-            echo "işlem başarısıız";
+            echo "işlem başarısız";
         }
 
     }
