@@ -121,4 +121,17 @@ function get_picture($path = "" , $picture = "" ,$resolution = "600x800" ){
 
 }
 
+function get_category_name($id){
+
+    $t = &get_instance();
+
+    $title = $t->db
+        ->where("id",$id)
+        ->get("categories")
+        ->row()
+        ->category_name;
+
+    return $title;
+}
+
 

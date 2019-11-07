@@ -81,13 +81,11 @@
                     <!--category(Kategori)-->
                     <div class="form-group">
                         <label>Kategoriler</label>
-                        <select name="category" id="category" class="form-control"  >
+                        <select name="categories_id" id="category" class="form-control">
                             <option value="">Lütfen Bir Kategori Seçiniz</option>
-                            <option value="Avize">Avize</option>
-                            <option value="Lambader">Lambader</option>
-                            <option value="MasaLambası">Masa Lambası</option>
-                            <option value="Ahsap Avize">Ahsap Avize</option>
-                            <option value="İthal Avize">İthal Avize</option>
+                            <?php foreach ($categories as $category) { ?>
+                                <option value="<?php echo $category->id;?>"><?php echo $category->category_name;?></option>
+                            <?php } ?>
                         </select>
                         <?php if (isset($form_error)){ ?>
                             <small style="color:#ff6c00; font-size: 13px;" class="pull-right"><?php echo form_error("category"); ?></small>

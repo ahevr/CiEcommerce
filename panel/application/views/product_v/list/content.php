@@ -18,6 +18,7 @@
                     <th style="text-align: center;">#id</th>
                     <th style="text-align: center;">Ürün Adı</th>
                     <th style="text-align: center;">Fiyat</th>
+                    <th style="text-align: center;">Kategori</th>
                     <th style="text-align: center;">Stok Kodu</th>
                     <th style="text-align: center;">Stok Durumu</th>
                     <th style="text-align: center;">Durum</th>
@@ -32,6 +33,7 @@
                             <td>#<?php echo $item->id;?></td>
                             <td><?php echo $item->product_name;?></td>
                             <td><?php echo $item->price;?></td>
+                            <td><?php echo get_category_name($item->categories_id);?></td>
                             <td><?php echo $item->stock_code;?></td>
                             <td><?php echo $item->stock_status;?></td>
                             <td>

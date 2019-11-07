@@ -35,6 +35,8 @@ class Product extends CI_Controller {
 
         $viewData = new stdClass();
 
+        $viewData->categories = $this->db->get("categories")->result();
+
         $viewData->viewFolder = $this->viewFolder;
         $viewData->subViewFolder = "add";
 
@@ -49,7 +51,7 @@ class Product extends CI_Controller {
         $this->form_validation->set_rules("product_name", "Ürün Adı", "required|trim");
         $this->form_validation->set_rules("price", "Fiyat", "required|trim");
         $this->form_validation->set_rules("bulb", "Ampül Sayısı", "required|trim");
-        $this->form_validation->set_rules("category", "Kategori", "required|trim");
+      //  $this->form_validation->set_rules("category", "Kategori", "required|trim");
         $this->form_validation->set_rules("color", "Renk", "required|trim");
         $this->form_validation->set_rules("usage_area", "Kullanım Alanı", "required|trim");
         $this->form_validation->set_rules("material", "Malzeme", "required|trim");
@@ -73,10 +75,11 @@ class Product extends CI_Controller {
                 array(
                     "product_name"  => $this->input->post("product_name"),
                     "price"         => $this->input->post("price"),
+                    "categories_id"         => $this->input->post("categories_id"),
                     "discounted_rate" => $this->input->post("discounted_rate"),
                     "discounted_price"=> $this->input->post("discounted_price"),
                     "bulb"          => $this->input->post("bulb"),
-                    "category"      => $this->input->post("category"),
+                   // "category"      => $this->input->post("category"),
                     "color"         => $this->input->post("color"),
                     "usage_area"    => $this->input->post("usage_area"),
                     "material"      => $this->input->post("material"),

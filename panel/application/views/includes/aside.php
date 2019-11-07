@@ -41,7 +41,7 @@
 
             <!--kategoriler-->
             <li class="treeview">
-            <li><a href="<?php echo base_url("categories");?>"><i class="fa fa-pied-piper"></i>Kategoriler</a></li>
+
             </li>
             <!--kategoriler-->
 
@@ -83,9 +83,34 @@
 
             <!--Ayarlar-->
             <li class="treeview">
-            <li><a href="<?php echo base_url("settings");?>"><i class="fa fa-stethoscope"></i> Site Ayarları</a></li>
+            <li><a href="<?php echo base_url("settings");?>"><i class="fa fa-cogs"></i> Site Ayarları</a></li>
             </li>
             <!--Ayarlar-->
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-wrench"></i> <span>Ürün Seçenekleri</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url("stocks");?>"><i class="fa fa-info-circle"></i>Stok Durumu</a></li>
+                    <li><a href="<?php echo base_url("categories");?>"><i class="fa fa-folder-open-o"></i>Kategoriler</a></li>
+                    <li><a href="<?php echo base_url("metarial");?>"><i class="fa fa-cubes"></i>Malzeme</a></li>
+                    <li><a href="<?php echo base_url("bulb");?>"><i class="fa fa-lightbulb-o"></i>Ampül Sayısı</a></li>
+                    <li><a href="<?php echo base_url("usage_area");?>"><i class="fa fa-building"></i>Kullanım Alanı</a></li>
+                    <li><a href="<?php echo base_url("colors");?>"><i class="fa fa-paint-brush"></i>Renkler</a></li>
+
+                </ul>
+            </li>
+
+
+
+
+
+
+
 
             <!--popups-->
             <li class="treeview">
