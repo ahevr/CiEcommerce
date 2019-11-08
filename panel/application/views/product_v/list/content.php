@@ -19,8 +19,9 @@
                     <th style="text-align: center;">Ürün Adı</th>
                     <th style="text-align: center;">Fiyat</th>
                     <th style="text-align: center;">Kategori</th>
+                    <th style="text-align: center;">Renk</th>
+                    <th style="text-align: center;">stok Durumu</th>
                     <th style="text-align: center;">Stok Kodu</th>
-                    <th style="text-align: center;">Stok Durumu</th>
                     <th style="text-align: center;">Durum</th>
                     <th style="text-align: center;">İşlem</th>
                 </tr>
@@ -34,8 +35,9 @@
                             <td><?php echo $item->product_name;?></td>
                             <td><?php echo $item->price;?></td>
                             <td><?php echo get_category_name($item->categories_id);?></td>
-                            <td><?php echo $item->stock_code;?></td>
+                            <td><?php echo get_color_name($item->color_id);?></td>
                             <td><?php echo get_stock_status($item->stock_status_id);?></td>
+                            <td><?php echo $item->stock_code;?></td>
                             <td>
                                 <input
                                         class="toggle_event"

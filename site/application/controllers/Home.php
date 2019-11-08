@@ -21,6 +21,8 @@ class Home extends CI_Controller {
 
         $this->load->model("slide_model");
 
+        $this->load->model("product_model");
+
         $this->load->model("category_model");
 
         $this->load->helper ("tools");
@@ -29,6 +31,12 @@ class Home extends CI_Controller {
         $slides = $this->slide_model->get_all(
             array(
                 "isActive"    => 1
+            )
+        );
+
+        $viewData->products = $this->product_model->get_all(
+            array(
+                "isActive" => 1
             )
         );
 
@@ -89,17 +97,15 @@ class Home extends CI_Controller {
 
         $viewData->links = $this->pagination->create_links();
 
+
         $viewData->products = $this->product_model->get_all(
              array(
                  "isActive" => 1
             )
          );
 
-        $viewData->categories = $this->category_model->get_all(
-            array(
-                "isActive" => 1
-            )
-        );
+        $viewData->categories   = $this->db->get("categories")->result();
+
 
         $viewData->kacurunvar = $this->sepet->sepette_ne_kadar_urun_var();
 
@@ -107,6 +113,37 @@ class Home extends CI_Controller {
 
     }
     /** #ürün listeleme sayfası */
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**kategoriler sayfası*/
+
+    public function getCategoryView($id){
+
+
+        $this->load->model("category_model");
+        $this->load->model("ayar_model");
+
+        $getCategory = $this->category_model->categoryList($id);
+
+        $viewData = new stdClass();
+
+        $viewData->viewFolder = "category_detail_v";
+
+        $viewData->products = $getCategory;
+        $viewData->category = $getCategory;
+
+
+        $viewData->urunlistesi = $this->ayar_model->getAll();
+        $viewData->kacurunvar = $this->sepet->sepette_ne_kadar_urun_var();
+
+
+        $this->load->view($viewData->viewFolder,$viewData);
+
+
+    }
+
+    /**#kategoriler sayfası*/
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

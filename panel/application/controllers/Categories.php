@@ -44,24 +44,6 @@ class Categories extends CI_Controller {
 
         $this->load->library("form_validation");
 
-        // Kurallar yazilir..
-        if($_FILES["img_url"]["name"] == ""){
-
-            $alert = array(
-                "title" => "İşlem Başarısız",
-                "text" => "Lütfen bir görsel seçiniz",
-                "type"  => "error"
-            );
-
-            // İşlemin Sonucunu Session'a yazma işlemi...
-            $this->session->set_flashdata("alert", $alert);
-
-            redirect(base_url("categories/new_form"));
-
-            die();
-        }
-
-
         $this->form_validation->set_rules("category_name", "Başlık", "required|trim");
 
         $this->form_validation->set_message(
@@ -69,8 +51,7 @@ class Categories extends CI_Controller {
                 "required"  => "<b>{field}</b> alanı doldurulmalıdır"
             )
         );
-
-        // Form Validation Calistirilir..
+        // Form Validation run biç..
         $validate = $this->form_validation->run();
 
         if($validate){
@@ -87,7 +68,7 @@ class Categories extends CI_Controller {
                 $insert = $this->category_model->add(
                     array(
                         "category_name"         => $this->input->post("category_name"),
-                        "url"                   => convertToSEO($this->input->post("url")),
+                        "url"                   => convertToSEO($this->input->post("category_name")),
                         "img_url"               => $file_name,
                         "isActive"              => 1,
                     )
@@ -155,168 +136,6 @@ class Categories extends CI_Controller {
 
         $update =  $this->db->where("id",$id)->update("categories",array("isActive"=>$isActive));
         echo $update;
-
-    }
-
-    public function update_form($id){
-
-        $viewData = new stdClass();
-
-        $item = $this->category_model->get(
-            array(
-                "id"     => $id,
-            )
-        );
-
-        $viewData->viewFolder = $this->viewFolder;
-        $viewData->subViewFolder = "update";
-        $viewData->item = $item;
-
-        $this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index", $viewData);
-    }
-
-    public function update($id){
-
-        $this->load->library("form_validation");
-
-        // Kurallar yazilir..
-
-        $categories_type = $this->input->post("categories_type");
-
-        if($categories_type == "video"){
-
-            $this->form_validation->set_rules("video_url", "Video URL", "required|trim");
-
-        }
-
-        $this->form_validation->set_rules("title", "Başlık", "required|trim");
-
-        $this->form_validation->set_message(
-            array(
-                "required"  => "<b>{field}</b> alanı doldurulmalıdır"
-            )
-        );
-
-        // Form Validation Calistirilir..
-        $validate = $this->form_validation->run();
-
-        if($validate){
-
-            if($categories_type == "image"){
-
-                // Upload Süreci...
-
-
-                if($_FILES["img_url"]["name"] !== "") {
-
-                    $file_name = convertToSEO(pathinfo($_FILES["img_url"]["name"], PATHINFO_FILENAME)) . "." . pathinfo($_FILES["img_url"]["name"], PATHINFO_EXTENSION);
-
-                    $config["allowed_types"] = "jpg|jpeg|png";
-                    $config["upload_path"] = "uploads/$this->viewFolder/";
-                    $config["file_name"] = $file_name;
-
-                    $this->load->library("upload", $config);
-
-                    $upload = $this->upload->do_upload("img_url");
-
-                    if ($upload) {
-
-                        $uploaded_file = $this->upload->data("file_name");
-
-                        $data = array(
-                            "title" => $this->input->post("title"),
-                            "description" => $this->input->post("description"),
-                            "url" => convertToSEO($this->input->post("title")),
-                            "categories_type" => $categories_type,
-                            "img_url" => $uploaded_file,
-                            "video_url" => "#",
-                        );
-
-                    } else {
-
-                        $alert = array(
-                            "title" => "İşlem Başarısız",
-                            "text" => "Görsel yüklenirken bir problem oluştu",
-                            "type" => "error"
-                        );
-
-                        $this->session->set_flashdata("alert", $alert);
-
-                        redirect(base_url("categories/update_form/$id"));
-
-                        die();
-
-                    }
-
-                } else {
-
-                    $data = array(
-                        "title" => $this->input->post("title"),
-                        "description" => $this->input->post("description"),
-                        "url" => convertToSEO($this->input->post("title")),
-                    );
-
-                }
-
-            } else if($categories_type == "video"){
-
-                $data = array(
-                    "title"         => $this->input->post("title"),
-                    "description"   => $this->input->post("description"),
-                    "url"           => convertToSEO($this->input->post("title")),
-                    "categories_type"     => $categories_type,
-                    "img_url"       => "#",
-                    "video_url"     => $this->input->post("video_url")
-                );
-
-            }
-
-            if (isset($data)) {
-                $update = $this->category_model->update(array("id" => $id), $data);
-            }
-
-            // TODO Alert sistemi eklenecek...
-            if($update){
-
-                $alert = array(
-                    "title" => "İşlem Başarılı",
-                    "text" => "Kayıt başarılı bir şekilde güncellendi",
-                    "type"  => "success"
-                );
-
-            } else {
-
-                $alert = array(
-                    "title" => "İşlem Başarısız",
-                    "text" => "Kayıt Güncelleme sırasında bir problem oluştu",
-                    "type"  => "error"
-                );
-            }
-
-            // İşlemin Sonucunu Session'a yazma işlemi...
-            $this->session->set_flashdata("alert", $alert);
-
-            redirect(base_url("categories"));
-
-        } else {
-
-            $viewData = new stdClass();
-
-            /** View'e gönderilecek Değişkenlerin Set Edilmesi.. */
-            $viewData->viewFolder = $this->viewFolder;
-            $viewData->subViewFolder = "update";
-            $viewData->form_error = true;
-            $viewData->categories_type = $categories_type;
-
-            /** Tablodan Verilerin Getirilmesi.. */
-            $viewData->item = $this->category_model->get(
-                array(
-                    "id"    => $id,
-                )
-            );
-
-            $this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index", $viewData);
-        }
 
     }
 

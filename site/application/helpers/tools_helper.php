@@ -95,3 +95,81 @@ function get_popup_service($page = ""){
     return (!empty($popup)) ? $popup : false ;
 
 }
+
+
+function get_category_name($id){
+
+    $t = &get_instance();
+
+    $title = $t->db
+        ->where("id",$id)
+        ->get("categories")
+        ->row()
+        ->category_name;
+
+    return $title;
+}
+
+function get_stock_status($id){
+
+    $t = &get_instance();
+
+    $title = $t->db
+        ->where("id",$id)
+        ->get("stock")
+        ->row()
+        ->stok_name;
+
+    return $title;
+}
+
+function get_bulb($id){
+
+    $t = &get_instance();
+
+    $title = $t->db
+        ->where("id",$id)
+        ->get("bulb")
+        ->row()
+        ->bulb_name;
+    return $title;
+}
+
+function get_material_name($id){
+
+    $t = &get_instance();
+
+    $title = $t->db
+        ->where("id",$id)
+        ->get("materials")
+        ->row()
+        ->material_name;
+    return $title;
+}
+
+function get_color_name($id){
+
+    $t = &get_instance();
+
+    $title = $t->db
+        ->where("id",$id)
+        ->get("colors")
+        ->row()
+        ->color_name;
+    return $title;
+}
+
+function get_usage_area($id){
+
+    $t = &get_instance();
+
+    $title = $t->db
+        ->where("id",$id)
+        ->get("usage_area")
+        ->row()
+        ->area_name;
+    return $title;
+}
+
+
+

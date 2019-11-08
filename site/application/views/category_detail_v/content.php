@@ -10,14 +10,14 @@
                     </h4>
                     <hr>
                         <ul class="p-b-54">
-                            <!-- kategorileri ekrana basar -->
-                             <?php foreach ($categories as $category) { ?>
-                                <li class="p-t-4">
-                                        <a href="<?php echo base_url('kategoriler/'.$category->url);?>" class="s-text13">
-                                            <?php echo $category->category_name;?>
-                                        </a>
-                                </li>
-                            <?php } ?>
+                            <!-- kategorileri ekrana basar burayada aynisi kategoriler cagililacak controllera -->
+<!--                             --><?php //foreach ($categories as $category) { ?>
+<!--                               <li class="p-t-4">-->
+<!--                                        <a href="--><?php //echo base_url('kategoriler/'.$category->url);?><!--" class="s-text13">-->
+<!--                                            --><?php //echo $category->category_name;?>
+<!--                                        </a>-->
+<!--                                </li>-->
+<!--                            --><?php //} ?>
                         </ul>
                 </div>
 
@@ -28,7 +28,7 @@
             <div class="col-sm-6 col-md-8 col-lg-9 p-b-50" id="searchdata">
                 <!-- Product -->
                 <div class="row">
-                    <?php foreach ($results as $product) { ?>
+                    <?php foreach ($products as $product) { ?>
                         <div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
                             <!-- Block2 -->
                             <div class="block2">
@@ -55,11 +55,14 @@
                     <?php } ?>
                 </div>
                 <!-- Pagination -->
-                <p class="pagination"><?php echo $links;?></p>
+<!--                bu fonksiyon hata veriyor lbunun kontrollerdaki onsiyonuna gerekli cagiracak -->
+<!--                <p class="pagination">--><?php //echo $links;?><!--</p>-->
             </div>
         </div>
     </div>
 </section>
+
+
 
 
 

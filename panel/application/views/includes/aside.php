@@ -33,6 +33,7 @@
             </li>
             <!--anasayfa-->
 
+
             <!--ürünler-->
             <li class="treeview">
             <li><a href="<?php echo base_url("product");?>"><i class="fa fa-bomb"></i>Ürünler</a></li>
@@ -98,8 +99,8 @@
                     <li><a href="<?php echo base_url("stocks");?>"><i class="fa fa-info-circle"></i>Stok Durumu</a></li>
                     <li><a href="<?php echo base_url("categories");?>"><i class="fa fa-folder-open-o"></i>Kategoriler</a></li>
                     <li><a href="<?php echo base_url("materials");?>"><i class="fa fa-cubes"></i>Malzeme</a></li>
-                    <li><a href="<?php echo base_url("bulb");?>"><i class="fa fa-lightbulb-o"></i>Ampül Sayısı</a></li>
-                    <li><a href="<?php echo base_url("usage_area");?>"><i class="fa fa-building"></i>Kullanım Alanı</a></li>
+                    <li><a href="<?php echo base_url("bulbs");?>"><i class="fa fa-lightbulb-o"></i>Ampül Sayısı</a></li>
+                    <li><a href="<?php echo base_url("usagearea");?>"><i class="fa fa-building"></i>Kullanım Alanı</a></li>
                     <li><a href="<?php echo base_url("colors");?>"><i class="fa fa-paint-brush"></i>Renkler</a></li>
 
                 </ul>

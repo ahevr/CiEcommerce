@@ -104,9 +104,10 @@
                         <label>Malzeme</label>
                         <select name="material_id" id="material" class="form-control"  >
                             <option value="">Lütfen Bir Malzeme Seçiniz</option>
-                            <option value="Cam">Cam</option>
-                            <option value="Ahşap">Ahşap</option>
-                            <option value="Metal">Metal</option>
+                            <?php foreach ($materials as $material) { ?>
+                                <option value="<?php echo $material->id;?>"><?php echo $material->material_name;?></option>
+                            <?php } ?>
+
                         </select>
                         <?php if (isset($form_error)){ ?>
                             <small style="color:#ff6c00; font-size: 13px;" class="pull-right"><?php echo form_error("material"); ?></small>
@@ -120,17 +121,9 @@
                         <label>Ampül Sayısı</label>
                         <select name="bulb_id" id="bulb" class="form-control"  >
                             <option value="">Lütfen Bir Değer Giriniz</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
+                            <?php foreach ($bulbs as $bulb) { ?>
+                                <option value="<?php echo $bulb->id;?>"><?php echo $bulb->bulb_name;?></option>
+                            <?php } ?>
                         </select>
                         <?php if (isset($form_error)){ ?>
                             <small style="color:#ff6c00; font-size: 13px;" class="pull-right"><?php echo form_error("bulb"); ?></small>
@@ -144,13 +137,9 @@
                         <label>Kullanım Alanı</label>
                         <select name="usage_area_id" id="usage_area" class="form-control"  >
                             <option value="">Lütfen Bir Kullanım Alanı Seçiniz</option>
-                            <option value="Salon">Salon</option>
-                            <option value="Oturma Odası">Oturma Odası</option>
-                            <option value="Yemek Odası">Yemek Odası</option>
-                            <option value="Çalışma Odası">Çalışma Odası</option>
-                            <option value="Çoçuk Odası">Çoçuk Odası</option>
-                            <option value="Mutfak">Mutfak</option>
-                            <option value="Balkon-Bahçe">Balkon-Bahçe</option>
+                            <?php foreach ($usageAreas as $usageArea) { ?>
+                                <option value="<?php echo $usageArea->id;?>"><?php echo $usageArea->area_name;?></option>
+                            <?php } ?>
                         </select>
                         <?php if (isset($form_error)){ ?>
                             <small style="color:#ff6c00; font-size: 13px;" class="pull-right"><?php echo form_error("usage_area"); ?></small>
@@ -164,24 +153,9 @@
                         <label>Renkler</label>
                         <select name="color_id" id="color" class="form-control"  >
                             <option value="">Lütfen Bir Ürün Rengi Seçiniz</option>
-                            <option value="Siyah">Siyah</option>
-                            <option value="Beyaz">Beyaz</option>
-                            <option value="Mavi">Mavi</option>
-                            <option value="Yeşil">Yeşil</option>
-                            <option value="Turuncu">Turuncu</option>
-                            <option value="Altın">Altın</option>
-                            <option value="Bakır">Bakır</option>
-                            <option value="Kırmızı">Kırmızı</option>
-                            <option value="Kahverengi">Kahverengi</option>
-                            <option value="Gümüş">Gümüş</option>
-                            <option value="Krem">Krem</option>
-                            <option value="Şampanya">Şampanya</option>
-                            <option value="Eskitme">Eskitme</option>
-                            <option value="Krom">Krom</option>
-                            <option value="Pembe">Pembe</option>
-                            <option value="Mürdüm">Mürdüm</option>
-                            <option value="Platin">Platin</option>
-                            <option value="Sarı">Sarı</option>
+                            <?php foreach ($colors as $color) { ?>
+                                <option value="<?php echo $color->id;?>"><?php echo $color->color_name;?></option>
+                            <?php } ?>
                         </select>
                         <?php if (isset($form_error)){ ?>
                             <small style="color:#ff6c00; font-size: 13px;" class="pull-right"><?php echo form_error("color"); ?></small>

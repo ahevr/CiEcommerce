@@ -105,19 +105,19 @@
                             <tbody>
                             <tr>
                                 <td>Kullanılan Malzeme</td>
-                                <td><?php echo $product->material;?></td>
+                                <td><?php echo  get_material_name($product->material_id);?></td>
                             </tr>
                             <tr>
                                 <td>Ampül Sayısı</td>
-                                <td><?php echo $product->bulb;?></td>
+                                <td><?php echo get_bulb($product->bulb_id);?></td>
                             </tr>
                             <tr>
                                 <td>Kullanım Alanı</td>
-                                <td><?php echo $product->usage_area;?></td>
+                                <td><?php echo  get_usage_area($product->usage_area_id);?></td>
                             </tr>
                             <tr>
                                 <td>Renk</td>
-                                <td><?php echo $product->color;?></td>
+                                <td><?php echo get_color_name($product->color_id);?></td>
                             </tr>
                             <tr>
                                 <td>En</td>
@@ -153,12 +153,12 @@
 
                             <tr>
                                 <td>Kategori</td>
-                                <td><?php echo $product->category;?></td>
+                                <td><?php echo get_category_name($product->categories_id);?></td>
                             </tr>
 
                             <tr>
                                 <td>Stok Durumu</td>
-                                <td><?php echo $product->stock_status;?></td>
+                                <td><?php echo get_stock_status($product->stock_status_id);?></td>
                             </tr>
                             </tr>
                             </tbody>

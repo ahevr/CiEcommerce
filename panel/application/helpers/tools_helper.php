@@ -2,8 +2,6 @@
 function convertToSEO($text){
     $turkce  = array("ç", "Ç", "ğ", "Ğ", "ü", "Ü", "ö", "Ö", "ı", "İ", "ş", "Ş", ".", ",", "!", "'", "\"", " ", "?", "*", "_", "|", "=", "(", ")", "[", "]", "{", "}");
     $convert = array("c", "c", "g", "g", "u", "u", "o", "o", "i", "i", "s", "s", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-");
-
-
     return strtolower(str_replace($turkce,$convert,$text));
 }
 function get_active_user(){
@@ -120,7 +118,6 @@ function get_picture($path = "" , $picture = "" ,$resolution = "600x800" ){
     return $picture;
 
 }
-
 function get_category_name($id){
 
     $t = &get_instance();
@@ -133,7 +130,6 @@ function get_category_name($id){
 
     return $title;
 }
-
 function get_stock_status($id){
 
     $t = &get_instance();
@@ -144,6 +140,50 @@ function get_stock_status($id){
         ->row()
         ->stok_name;
 
+    return $title;
+}
+function get_bulb($id){
+
+    $t = &get_instance();
+
+    $title = $t->db
+        ->where("id",$id)
+        ->get("bulb")
+        ->row()
+        ->bulb_name;
+    return $title;
+}
+function get_material_name($id){
+
+    $t = &get_instance();
+
+    $title = $t->db
+        ->where("id",$id)
+        ->get("materials")
+        ->row()
+        ->material_name;
+    return $title;
+}
+function get_color_name($id){
+
+    $t = &get_instance();
+
+    $title = $t->db
+        ->where("id",$id)
+        ->get("colors")
+        ->row()
+        ->color_name;
+    return $title;
+}
+function get_usage_area($id){
+
+    $t = &get_instance();
+
+    $title = $t->db
+        ->where("id",$id)
+        ->get("usage_area")
+        ->row()
+        ->area_name;
     return $title;
 }
 

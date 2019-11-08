@@ -22,6 +22,17 @@ $route["sepetim"] = "home/sepetim";
 $route["giris-yap"] = "home/login";
 $route["kayit-ol"] = "home/register";
 
+
+
+
+$route["kategoriler"] = "home/getCategoryView";
+$route["kategoriler/(:any)"] = "home/getCategoryView/$1";
+// örnek olarak detaile bakabilriiz.
+
+
+
+
+
 $route["kataloglar"]           = "home/catalogs_list";
 $route["katalog-detay/(:any)"] = "home/catalog_detail/$1";
 
