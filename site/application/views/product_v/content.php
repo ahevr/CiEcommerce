@@ -201,7 +201,7 @@
                                 </a>
 
                                 <span class="block2-price m-text6 p-r-5">
-                                     <b style="color: #FF6C00; font-size: 15px; text-align: center;"><?php echo $product->price;?> TL<small></small></b>
+                                     <b style="color: #FF6C00; font-size: 15px; text-align: center;"><?php echo $product->price;?> TL</b>
                                 </span>
                             </div>
                         </div>

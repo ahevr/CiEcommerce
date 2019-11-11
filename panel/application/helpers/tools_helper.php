@@ -118,6 +118,7 @@ function get_picture($path = "" , $picture = "" ,$resolution = "600x800" ){
     return $picture;
 
 }
+
 function get_category_name($id){
 
     $t = &get_instance();
@@ -186,5 +187,6 @@ function get_usage_area($id){
         ->area_name;
     return $title;
 }
+
 
 

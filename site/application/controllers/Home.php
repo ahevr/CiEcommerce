@@ -118,28 +118,43 @@ class Home extends CI_Controller {
 
     /**kategoriler sayfası*/
 
-    public function getCategoryView($id){
-
+    public function getCategoryView($url){
 
         $this->load->model("category_model");
+        $this->load->model("product_model");
         $this->load->model("ayar_model");
 
-        $getCategory = $this->category_model->categoryList($id);
+        $getCategory = $this->category_model->categoryList($url);
 
         $viewData = new stdClass();
 
         $viewData->viewFolder = "category_detail_v";
 
-        $viewData->products = $getCategory;
-        $viewData->category = $getCategory;
+        $viewData->products     = $getCategory;
+        $viewData->categories   = $this->db->get("categories")->result();
 
+        $this->load->library("pagination");
+
+
+        $config["base_url"] = base_url("home/product_list");
+        $config["total_rows"] = $this->product_model->get_count();
+        $config["uri_segment"] = 3;
+        $config["per_page"] = 9;
+
+
+        $this->pagination->initialize($config);
+
+        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
+        $viewData-> results = $this->product_model->get_records($config["per_page"],$page);
+
+        $viewData->links = $this->pagination->create_links();
 
         $viewData->urunlistesi = $this->ayar_model->getAll();
         $viewData->kacurunvar = $this->sepet->sepette_ne_kadar_urun_var();
 
 
         $this->load->view($viewData->viewFolder,$viewData);
-
 
     }
 

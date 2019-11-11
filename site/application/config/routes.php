@@ -27,7 +27,7 @@ $route["kayit-ol"] = "home/register";
 
 $route["kategoriler"] = "home/getCategoryView";
 $route["kategoriler/(:any)"] = "home/getCategoryView/$1";
-// örnek olarak detaile bakabilriiz.
+
 
 
 

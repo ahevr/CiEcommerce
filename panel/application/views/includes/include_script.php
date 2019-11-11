@@ -20,9 +20,58 @@
 
 <script src="<?php echo base_url("assets");?>/dist/js/custom.js"></script>
 
+
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 <script src="<?php echo base_url("assets");?>/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+
+
+<script>
+    $(document).ready(function(){
+        $('#para').mask('000.000.000.000.000.00', {reverse: true});
+    });
+</script>
+
+<script>
+    // main function when page is opened
+    $(document).ready(function () {
+        $(document).on("keyup", ".hesaplama", calcAll); //
+        $(".hesaplama").on("change", calcAll); });
+    function calcAll() {
+        $(".satir").each(function () {
+            var fiyat = 0;
+            var iskonto = 0;
+            if (!isNaN(parseFloat($(this).find(".fiyat").val()))) {
+                fiyat = parseFloat($(this).find(".fiyat").val());
+            }
+            if (!isNaN(parseFloat($(this).find(".iskonto").val()))) {
+                iskonto = parseFloat($(this).find(".iskonto").val());
+            }
+            iskontotutar = fiyat * iskonto/100;
+            $(this).find(".iskontotutar").val(iskontotutar.toFixed(2));
+
+            satisfiyati = fiyat - iskontotutar;
+            $(this).find(".satisfiyati").val(satisfiyati.toFixed(2));
+        });
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -120,3 +169,30 @@ $alert = $this->session->userdata("alert");
         <?php }
     }
 ?>
+
+<script>
+    $(document).ready(function () {
+        function ParaFormat(Num) {
+            Num += '';
+            Num = Num.replace('.', '');
+            Num = Num.replace('.', '');
+            Num = Num.replace('.', '');
+            Num = Num.replace('.', '');
+            Num = Num.replace('.', '');
+            Num = Num.replace('.', '');
+            x = Num.split(',');
+            x1 = x[0];
+            x2 = x.length > 1 ? ',' + x[1] : '';
+            var rgx = /(\d+)(\d(3))/;
+            while (rgx.test(x1))
+                x1 = x1.replace(rgx, '$1' + '.' + '$2');
+            return x1 + x2;
+        }
+    }
+</script>
+
+
+
+
+
+

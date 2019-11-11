@@ -5,7 +5,7 @@
     <div class="box-body">
         <form action="<?php echo base_url("product/save");?>" method="post">
             <div class="box-body">
-                <div class="col-md-4">
+                <div class="col-md-4 satir">
                     <!--product_name(ürün adı)-->
                     <div class="form-group">
                         <label for="exampleInputEmail1">Ürün Adı</label>
@@ -20,37 +20,23 @@
                     <!--price(fiyat)-->
                     <div class="form-group">
                         <label for="exampleInputEmail1">Fiyatı</label>
-                        <input type="text" class="form-control" name="price" placeholder="Lütfen Eklemek İstediğini Ürünün Fiyatını Giriniz">
+                        <input type="text" class="form-control fiyat hesaplama" name="price" id="para" placeholder="Lütfen Eklemek İstediğini Ürünün Fiyatını Giriniz">
                         <?php if (isset($form_error)){ ?>
-                            <small style="color:#ff6c00; font-size: 13px;" class="pull-right"><?php echo form_error("price"); ?></small>
+                            <small style="color:#ff6c00; font-size: 13px;" class="pull-right">   <?php echo form_error("price"); ?></small>
                         <?php } ?>
                     </div>
                     <!--price(fiyat)END-->
 
 
-
                     <div class="form-group">
                         <label for="exampleInputEmail1">İndirim Oranı</label>
-                        <input type="text" class="form-control" name="discounted_rate" placeholder="Lütfen Eklemek İstediğini İndirim Oranını Giriniz">
+                        <input type="text" class="form-control iskonto hesaplama" name="discounted_rate" placeholder="Lütfen Eklemek İstediğini İndirim Oranını Giriniz">
                     </div>
-
-
-
-
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">İndirimli Fiyatı</label>
-                        <input type="text" class="form-control" name="discounted_price">
+                        <input type="text" class="form-control satisfiyati" name="discounted_price">
                     </div>
-
-
-
-
-
-
-
-
-
 
                     <!--stock_code(stok kodu)-->
                     <div class="form-group">
