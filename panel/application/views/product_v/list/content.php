@@ -55,6 +55,8 @@
                                         <?php echo ($item->isActive == 1) ? "checked" : "";?>
                                 />
                             </td>
+
+
                             <td>
                                 <button data-url="<?php echo base_url("product/delete/$item->id");?>" class="btn btn-danger btn-sm remove-btn"><i class="fa fa-trash"></i> Sil</button>
                                 <a href="<?php echo base_url("product/update_form/$item->id");?>" class="btn  btn-success btn-sm"><i class="fa fa-edit"></i> Düzenle</a>

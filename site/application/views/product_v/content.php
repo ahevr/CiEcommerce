@@ -17,13 +17,45 @@
             </div>
         </div>
         <div class="w-size14 p-t-30 respon5">
-                <h4 class="product-detail-name m-text16 p-b-13">
-                    <?php echo $product->product_name;?>
-                </h4>
 
-                <span class="m-text17" style="color: #ff6c00; font-weight: 200;">
-                    <?php echo $product->price;?> <small>TL</small>
-                </span>
+            <div class="container">
+                <div class="row product-border">
+                    <div class="product">
+                        <h4 class="product-detail-name m-text16 p-b-13">
+                            <?php echo $product->product_name;?>
+                        </h4>
+                        <p class="s-text8">
+                           <b>Ege Sedef Aydınlatma Güvenceliyle</b>  100 TL ve üzeri alışverişlerde kargo bedava!
+                        </p>
+                        <span class="m-text17" style="font-weight: 200;">
+                                 <?php if ($product->discounted_price > 0) { ?>
+                                     <del style="font-size: 20px;"><?php echo $product->price;?> TL</del>
+                                     <br>
+                                     <div style="color: #ff6c00; font-weight: 800;"><b><?php echo $product->discounted_price;?></b>TL</div>
+                                     <div class="discounted self-end">
+                                        %
+                                        <?php echo $product->discounted_rate;?>
+                                        İndirim
+                                    </div>
+                                 <?php } else { ?>
+                                     <?php echo discounted_price;?>
+                                 <?php } ?>
+
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
 
                 <div class="p-t-33 p-b-60">
                     <div class="flex-r-m flex-w p-t-10">
@@ -41,9 +73,7 @@
 
                             <div class="btn-addcart-product-detail size9 trans-0-4 m-t-10 m-b-10">
 
-
-                                            <a href="<?php echo base_url("home/sepeteekle/$product->id");?>"  class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">Sepete Ekle</a>
-
+                             <a href="<?php echo base_url("home/sepeteekle/$product->id");?>"  class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">Sepete Ekle</a>
 
                             </div>
 

@@ -145,11 +145,20 @@ class Product extends CI_Controller {
 
         $viewData = new stdClass();
 
+
+
         $item = $this->product_model->get(
             array(
                 "id"     => $id,
             )
         );
+
+        $viewData->categories   = $this->db->get("categories")->result();
+        $viewData->stock_status = $this->db->get("stock")->result();
+        $viewData->bulbs        = $this->db->get("bulb")->result();
+        $viewData->usageAreas   = $this->db->get("usage_area")->result();
+        $viewData->colors       = $this->db->get("colors")->result();
+        $viewData->materials     = $this->db->get("materials")->result();
 
         $viewData->viewFolder = $this->viewFolder;
         $viewData->subViewFolder = "update";
@@ -164,16 +173,6 @@ class Product extends CI_Controller {
         $this->load->library("form_validation");
 
         $this->form_validation->set_rules("product_name", "Ürün Adı", "required|trim");
-        $this->form_validation->set_rules("price", "Fiyat", "required|trim");
-        $this->form_validation->set_rules("bulb", "Ampül Sayısı", "required|trim");
-        $this->form_validation->set_rules("category", "Kategori", "required|trim");
-        $this->form_validation->set_rules("color", "Renk", "required|trim");
-        $this->form_validation->set_rules("usage_area", "Kullanım Alanı", "required|trim");
-        $this->form_validation->set_rules("material", "Malzeme", "required|trim");
-        $this->form_validation->set_rules("description", "Açıklama", "required|trim");
-        $this->form_validation->set_rules("stock_code", "Stok Kodu", "required|trim");
-        $this->form_validation->set_rules("stock_status", "Stok Durumu", "required|trim");
-        $this->form_validation->set_rules("depo", "Stok Adeti", "required|trim");
 
         $this->form_validation->set_message(
             array(
@@ -195,19 +194,24 @@ class Product extends CI_Controller {
                     "price"         => $this->input->post("price"),
                     "discounted_rate"         => $this->input->post("discounted_rate"),
                     "discounted_price"=> $this->input->post("discounted_price"),
-                    "bulb"          => $this->input->post("bulb"),
-                    "category"      => $this->input->post("category"),
-                    "color"         => $this->input->post("color"),
-                    "usage_area"    => $this->input->post("usage_area"),
-                    "material"      => $this->input->post("material"),
+                    "bulb_id"          => $this->input->post("bulb_id"),
+                    "categories_id"         => $this->input->post("categories_id"),
+                    "color_id"         => $this->input->post("color_id"),
+                    "usage_area_id"    => $this->input->post("usage_area_id"),
+                    "material_id"      => $this->input->post("material_id"),
                     "description"   => $this->input->post("description"),
                     "stock_code"    => $this->input->post("stock_code"),
-                    "stock_status"  => $this->input->post("stock_status"),
+                    "stock_status_id"  => $this->input->post("stock_status_id"),
                     "depo"          => $this->input->post("depo"),
                     "width"         => $this->input->post("width"),
                     "height"        => $this->input->post("height"),
                     "length"        => $this->input->post("length"),
                     "url"           => convertToSEO($this->input->post("product_name"))
+
+
+
+
+
                 )
             );
 
@@ -268,6 +272,12 @@ class Product extends CI_Controller {
                 "id"    => $id
             )
         );
+        $viewData->categories   = $this->db->get("categories")->result();
+        $viewData->stock_status = $this->db->get("stock")->result();
+        $viewData->bulbs        = $this->db->get("bulb")->result();
+        $viewData->usageAreas   = $this->db->get("usage_area")->result();
+        $viewData->colors       = $this->db->get("colors")->result();
+        $viewData->materials     = $this->db->get("materials")->result();
 
         /** view gönderileceklerin ekrana basılması */
         $viewData->viewFolder = $this->viewFolder;

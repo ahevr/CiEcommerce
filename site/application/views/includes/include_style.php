@@ -64,4 +64,49 @@
         border: 1px solid #e6e6e6 !important;
         border-radius: 2px;
     }
+    .discounted{
+        width: 62px;
+        /* margin-left: 0px; */
+        height: 40px;
+        text-align: center;
+        font-size: 12px;
+        border: 1px solid #eef6fa;
+        border-radius: 3px;
+        color: #ff6c00;
+        line-height: 12px;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* margin-bottom: 6px; */
+        /* margin-top: 15px; */
+        position: relative;
+        left: 85%;
+        bottom: 4em;
+    }
+    .product-border{
+        border: 1px solid #eef6fa;
+        padding: 15px;
+    }
+    .discounted-product-list{
+        width: 62px;
+        /* margin-left: 0px; */
+        height: 40px;
+        text-align: center;
+        font-size: 12px;
+        border: 1px solid #eef6fa;
+        border-radius: 3px;
+        color: #ff6c00;
+        line-height: 12px;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* margin-bottom: 6px; */
+        /* margin-top: 15px; */
+        position: relative;
+        left: 73%;
+        bottom: 4em;
+    }
+
 </style>

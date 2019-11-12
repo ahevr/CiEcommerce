@@ -30,6 +30,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
 
 
+
+
 <script>
     $(document).ready(function(){
         $('#para').mask('000.000.000.000.000.00', {reverse: true});
@@ -59,40 +61,6 @@
         });
     }
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <script>
     $(document).ready(function () {
@@ -166,30 +134,7 @@ $alert = $this->session->userdata("alert");
                 });
             </script>
 
-        <?php }
-    }
-?>
-
-<script>
-    $(document).ready(function () {
-        function ParaFormat(Num) {
-            Num += '';
-            Num = Num.replace('.', '');
-            Num = Num.replace('.', '');
-            Num = Num.replace('.', '');
-            Num = Num.replace('.', '');
-            Num = Num.replace('.', '');
-            Num = Num.replace('.', '');
-            x = Num.split(',');
-            x1 = x[0];
-            x2 = x.length > 1 ? ',' + x[1] : '';
-            var rgx = /(\d+)(\d(3))/;
-            while (rgx.test(x1))
-                x1 = x1.replace(rgx, '$1' + '.' + '$2');
-            return x1 + x2;
-        }
-    }
-</script>
+        <?php } } ?>
 
 
 

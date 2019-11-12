@@ -46,8 +46,19 @@
                                            <b style="font-weight: bold;"><?php echo $product->product_name;?></b>
                                         </a>
 
-                                        <span class="block2-price m-text6 p-r-5">
-                                           <b style="color: #FF6C00; font-size: 18px; text-align: center;"><?php echo $product->price;?> TL</b>
+                                    <span class="block2-price m-text6 p-r-5">
+                                           <?php if ($product->discounted_price > 0) { ?>
+                                               <del style="font-size: 20px;"><?php echo $product->price;?> TL</del>
+                                               <br>
+                                               <div style="color: #ff6c00; font-weight: 800;"><b><?php echo $product->discounted_price;?></b>TL</div>
+                                               <div class="discounted-product-list">
+                                                    %
+                                                    <?php echo $product->discounted_rate;?>
+                                                    İndirim
+                                                </div>
+                                           <?php } else { ?>
+                                               <?php echo discounted_price;?>
+                                           <?php } ?>
                                         </span>
                                 </div>
                             </div>

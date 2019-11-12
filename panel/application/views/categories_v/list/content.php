@@ -33,7 +33,6 @@
                             <img width="75" src="<?php echo get_picture($viewFolder,$item->img_url,"600x800");?>"
                                  alt=""
                                  class="img-rounded">
-
                         </td>
                         <td>
                             <input
