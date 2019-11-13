@@ -1,5 +1,4 @@
 <?php if (empty($item_images)) { ?>
-
     <div class="callout callout-danger text-center">
         <h4>Kayıt Bulunamadı!</h4>
         <p>Burada herhangi bir fotoğraf bulunamadı</a></p>

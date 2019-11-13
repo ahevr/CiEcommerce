@@ -16,6 +16,7 @@
                 <thead>
                 <tr>
                     <th style="text-align: center;">#id</th>
+                    <th style="text-align: center;">Görsel</th>
                     <th style="text-align: center;">Ürün Adı</th>
                     <th style="text-align: center;">Fiyat</th>
                     <th style="text-align: center;">İskonto</th>
@@ -33,6 +34,14 @@
 
                         <tr>
                             <td>#<?php echo $item->id;?></td>
+                            <td>
+                                <?php
+                                $image = get_product_cover_image($item->id);
+
+                                $image = ($image) ? base_url("../panel/uploads/product_v/600x800/$image") : base_url("assets/images/item-02.jpg");
+                                ?>
+                                <img width="75" class="img-rounded" src="<?php echo $image; ?>">
+                            </td>
                             <td><?php echo $item->product_name;?></td>
                             <td><?php echo $item->price;?></td>
                             <td><?php echo $item->discounted_rate;?></td>

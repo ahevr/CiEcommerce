@@ -38,7 +38,7 @@
 
                                         $image = ($image) ? base_url("../panel/uploads/product_v/600x800/$image") : base_url("assets/images/item-02.jpg");
                                     ?>
-                                    <img src="<?php echo $image; ?>">
+                                    <img width="100" src="<?php echo $image; ?>">
 
                                 </div>
                                 <div class="block2-txt p-t-20">

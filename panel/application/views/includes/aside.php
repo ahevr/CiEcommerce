@@ -26,7 +26,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
 
-            <li class="header">MAIN NAVIGATION</li>
+            <li class="header">Yönetim Paneli</li>
             <!--anasayfa-->
             <li class="treeview">
             <li><a href="<?php echo base_url("");?>"><i class="fa fa-dashboard"></i>Dashboard</a>
@@ -88,6 +88,15 @@
             </li>
             <!--Ayarlar-->
 
+            <!--popups-->
+            <li class="treeview">
+            <li><a href="<?php echo base_url("popups");?>"><i class="fa fa-podcast"></i> PopUps Modülü</a></li>
+            </li>
+            <!--popups-->
+
+
+            <li class="header">Ürün Seçenek ve İçerikleri</li>
+
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-wrench"></i> <span>Ürün Seçenekleri</span>
@@ -106,18 +115,16 @@
                 </ul>
             </li>
 
-
-
-
-
-
-
-
-            <!--popups-->
+            <li class="header">Frontend</li>
+            <!--Site-->
             <li class="treeview">
-            <li><a href="<?php echo base_url("popups");?>"><i class="fa fa-podcast"></i> PopUps Modülü</a></li>
+            <li><a href="<?php echo base_url("../site");?>" target="_blank"><i class="fa fa-globe"></i>Siteye Git</a></li>
             </li>
-            <!--popups-->
+            <!--Site-->
+
+
+
+
         </ul>
     </section>
     <!-- /.sidebar -->

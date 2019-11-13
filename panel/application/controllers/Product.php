@@ -145,6 +145,13 @@ class Product extends CI_Controller {
 
         $viewData = new stdClass();
 
+        $viewData->categories   = $this->db->get("categories")->result();
+        $viewData->stock_status = $this->db->get("stock")->result();
+        $viewData->bulbs        = $this->db->get("bulb")->result();
+        $viewData->usageAreas   = $this->db->get("usage_area")->result();
+        $viewData->colors       = $this->db->get("colors")->result();
+        $viewData->materials    = $this->db->get("materials")->result();
+
 
 
         $item = $this->product_model->get(
@@ -153,12 +160,7 @@ class Product extends CI_Controller {
             )
         );
 
-        $viewData->categories   = $this->db->get("categories")->result();
-        $viewData->stock_status = $this->db->get("stock")->result();
-        $viewData->bulbs        = $this->db->get("bulb")->result();
-        $viewData->usageAreas   = $this->db->get("usage_area")->result();
-        $viewData->colors       = $this->db->get("colors")->result();
-        $viewData->materials     = $this->db->get("materials")->result();
+
 
         $viewData->viewFolder = $this->viewFolder;
         $viewData->subViewFolder = "update";
