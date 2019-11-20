@@ -1,0 +1,104 @@
+
+
+
+/* LoginEkranıCSS*/
+.well{
+    background: none;
+    box-shadow: none;
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    border: 1px solid #e3e3e3;
+}
+.form-horizontal input.btn, a.btn,#button-account.btn, input[type='submit'], .button{
+    border: none;
+    background: #292929 !important;
+    padding: 0px 40px;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #fff !important;
+    line-height: 44px;
+    height: 44px;
+    display: inline-block;
+    font-family: "Montserrat", "HelveticaNeue", "Helvetica Neue", sans-serif;
+    font-weight: 500;
+    letter-spacing: .025em;
+    border-radius: 0;
+}
+select.form-control, textarea.form-control, input[type="text"].form-control, input[type="password"].form-control, input[type="datetime"].form-control, input[type="datetime-local"].form-control, input[type="date"].form-control, input[type="month"].form-control, input[type="time"].form-control, input[type="week"].form-control, input[type="number"].form-control, input[type="email"].form-control, input[type="url"].form-control, input[type="search"].form-control, input[type="tel"].form-control, input[type="color"].form-control {
+    font-family: Montserrat-Regular;
+    font-size: 13px;
+    color: #555555;
+    line-height: 1.8;
+    border: 1px solid #e6e6e6 !important;
+    border-radius: 2px;
+}
+/*  #LoginEkranıCSS*/
+
+
+/* SepetveFiyat*/
+.discounted{
+    width: 62px;
+    /* margin-left: 0px; */
+    height: 40px;
+    text-align: center;
+    font-size: 12px;
+    border: 1px solid #eef6fa;
+    border-radius: 3px;
+    color: #ff6c00;
+    line-height: 12px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* margin-bottom: 6px; */
+    /* margin-top: 15px; */
+    position: relative;
+    left: 85%;
+    bottom: 4em;
+}
+.product-border{
+    border: 1px solid #eef6fa;
+    padding: 15px;
+}
+.discounted-product-list{
+    width: 62px;
+    /* margin-left: 0px; */
+    height: 40px;
+    text-align: center;
+    font-size: 12px;
+    border: 1px solid #eef6fa;
+    border-radius: 3px;
+    color: #ff6c00;
+    line-height: 12px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* margin-bottom: 6px; */
+    /* margin-top: 15px; */
+    position: relative;
+    left: 73%;
+    bottom: 4em;
+}
+/*  #SepetveFiyat*/
+
+/*iconAyarları(ücretsiz kargo vs)*/
+.icons-png{
+    display: flex;
+    justify-content: flex-start;
+}
+.icons-png p{
+    display: flex;
+    margin-bottom: 15px;
+}
+.icons-png img  {
+    display: flex;
+    justify-content: center;
+    width: 50px;
+
+}
+
+
+/*#iconAyarları(ücretsiz kargo vs)*/
+

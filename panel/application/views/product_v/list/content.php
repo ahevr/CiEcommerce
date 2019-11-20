@@ -12,7 +12,7 @@
                     <p>Burada herhangi bir veri bulunamadı. Eklemek için lütfen <a href="<?php echo base_url("product/new_form");?>">tıklayınız</a></p>
                 </div>
             <?php } else { ?>
-            <table id="table" class="table table-hover table-bordered table-striped">
+            <table id="table" class="table table-hover table-bordered">
                 <thead>
                 <tr>
                     <th style="text-align: center;">#id</th>

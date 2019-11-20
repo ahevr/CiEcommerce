@@ -17,7 +17,6 @@
             </div>
         </div>
         <div class="w-size14 p-t-30 respon5">
-
             <div class="container">
                 <div class="row product-border">
                     <div class="product">
@@ -40,8 +39,6 @@
                                  <?php } else { ?>
                                      <?php echo discounted_price;?>
                                  <?php } ?>
-
-
                         </span>
                     </div>
                 </div>
@@ -83,24 +80,15 @@
 
 
             <div class="row">
-                <div class="col-md-4">
-                    <img style="width: 50px;position: relative;left: 21px;" src="<?php echo base_url("panel/delivery-truck.png");?>">
-                    <p>Ücretsiz Kargo</p>
-                </div>
+                    <div class="col-md-4">
+                        <img style="width: 50px;position: relative;left: 21px; display: flex; justify-content: center; " src="<?php echo base_url("panel/delivery-truck.png");?>">
+                        <p>Ücretsiz Kargo</p>
+                    </div>
 
-                <div class="col-md-4">
-                    <img style="width: 50px;position: relative;left: 29px;" src="<?php echo base_url("panel/startup.png");?>">
-                    <p>Hızlı Gönderim</p>
-                </div>
-
-                <div class="col-md-4">
-                    <img style="width: 50px;position: relative;left: 34px;" src="<?php echo base_url("panel/box.png");?>">
-                    <p>Kapalı Kutu Ürün</p>
-                </div>
-
-
-
-
+                    <div class="col-md-4">
+                        <img style="width: 50px;position: relative;left: 29px;" src="<?php echo base_url("panel/startup.png");?>">
+                        <p>Hızlı Gönderim</p>
+                    </div>
             </div>
 
 
