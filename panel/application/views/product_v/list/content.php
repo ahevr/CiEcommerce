@@ -1,7 +1,6 @@
-
 <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Ürün Listesi</h3>
+            <h3 class="box-title" style="font-size: 20px;">Ürün Listesi</h3>
             <a href="<?php echo base_url("product/new_form");?>" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Yeni Ekle</a>
         </div>
         <div class="box-body">
@@ -20,6 +19,7 @@
                     <th style="text-align: center;">Ürün Adı</th>
                     <th style="text-align: center;">Fiyat</th>
                     <th style="text-align: center;">İskonto</th>
+                    <th style="text-align: center;">İskontolu Fiyatı</th>
                     <th style="text-align: center;">Kategori</th>
                     <th style="text-align: center;">Renk</th>
                     <th style="text-align: center;">stok Durumu</th>
@@ -28,7 +28,7 @@
                     <th style="text-align: center;">İşlem</th>
                 </tr>
                 </thead>
-                <tbody style="text-align: center">
+                <tbody style="text-align: center;">
 
                     <?php foreach ($items as $item ) {?>
 
@@ -43,11 +43,12 @@
                                 <img width="75" class="img-rounded" src="<?php echo $image; ?>">
                             </td>
                             <td><?php echo $item->product_name;?></td>
-                            <td><?php echo $item->price;?></td>
-                            <td><?php echo $item->discounted_rate;?></td>
+                            <td style="color: #FF8300;font-weight: bold;"><?php echo $item->price;?></td>
+                            <td style="color: #0b93d5; font-weight: bold;"><?php echo $item->discounted_rate;?></td>
+                            <td style="color: #ff4f51; font-weight: 900;  "><?php echo $item->discounted_price;?></td>
                             <td><?php echo get_category_name($item->categories_id);?></td>
                             <td><?php echo get_color_name($item->color_id);?></td>
-                            <td><?php echo get_stock_status($item->stock_status_id);?></td>
+                            <td style="color: darkgreen;font-weight: 900;"><?php echo get_stock_status($item->stock_status_id);?></td>
                             <td><?php echo $item->stock_code;?></td>
                             <td>
                                 <input
@@ -79,3 +80,7 @@
             <?php } ?>
         </div>
 </div>
+
+<style>
+
+</style>
