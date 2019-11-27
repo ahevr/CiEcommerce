@@ -87,7 +87,7 @@
 
                     <div class="col-md-4">
                         <img style="width: 50px;position: relative;left: 29px;" src="<?php echo base_url("panel/startup.png");?>">
-                        <p>Hızlı Gönderim</p>
+                        <p>Hızlı Gönderiim</p>
                     </div>
             </div>
 
