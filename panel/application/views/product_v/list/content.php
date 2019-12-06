@@ -1,7 +1,7 @@
 <div class="box">
         <div class="box-header">
             <h3 class="box-title" style="font-size: 20px;">Ürün Listesi</h3>
-            <a href="<?php echo base_url("product/new_form");?>" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Yeni Ekle</a>
+            <a href="<?php echo base_url("product/new_form");?>" class="btn btn-success btn-sm pull-right"><i class="fa fa-plus"></i> Yeni Ekle</a>
         </div>
         <div class="box-body">
             <?php if (empty($items)) { ?>

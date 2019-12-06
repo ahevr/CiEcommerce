@@ -30,7 +30,7 @@
                     <tr class="table-row">
                        <!-- <td class="column-1"></td>-->
                         <td class="column-1"><?php echo $urunugetir->product_name;?></td>
-                        <td class="column-1"><b> <?php echo $urunugetir->price;?>TL</b></td>
+                        <td class="column-1"><b> <?php echo $urunugetir->discounted_price;?>TL</b></td>
                         <td class="column-1">
                             <div class="flex-w bo5 of-hidden w-size17">
                                 <button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
@@ -44,12 +44,12 @@
                                 </button>
                             </div>
                         </td>
-                        <td class="column-1"><b><?php echo $urunugetir->price * $key." TL";?></b></td>
+                        <td class="column-1"><b><?php echo $urunugetir->discounted_price * $key." TL";?></b></td>
                         <td><a href="<?php echo base_url('home/sepettencikar/'.$urunugetir->id);?>" class="btn btn-danger" >Sepetten Çıkar</a></td>
 
                     </tr>
                 <?php
-                    $adettoplam = $urunugetir->price * $key;
+                    $adettoplam = $urunugetir->discounted_price * $key;
                       $toplam+=$adettoplam;
 
                     $toplammiktar = $key;

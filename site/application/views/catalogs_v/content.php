@@ -27,8 +27,8 @@
                                         <a href="<?php echo base_url("katalog-detay/$key->url");?>" class="btn btn-sm btn-outline-secondary">İncele</a>
                                     </div>
                                     <div class="btn-group">
-<!--                                        <a href="--><?php //echo base_url("site/panel/uploads/catalog_v/$key->url");?><!--"-->
-                                        <a href="<?php echo base_url("site/kataloglar_pdf/2014-2015-Ege-Sedef-Avize-Katalogu.pdf");?>"
+                                        <a href="<?php echo base_url("../panel/uploads/catalog_v/$key->url");?>"
+
                                            class="btn btn-sm btn-outline-secondary"
                                            download="">
                                             İndir
